@@ -1,1 +1,1 @@
-document.body.style.backgroundColor = "red";Code language: JavaScript (javascript)
+console.log("finish");
