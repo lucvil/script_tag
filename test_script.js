@@ -1,1 +1,1 @@
-console.log("finish");
+alert("finish");
