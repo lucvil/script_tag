@@ -19,4 +19,9 @@
 //         });
 //     }
 // }
-console.log(customer.email);
+// console.log(customer.email);
+Shopify.Checkout.OrderStatus.addContentBox(
+   '<h2>限定クーポン情報</h2>',
+   '<p>次回ご利用いただけるクーポンをご用意しました。 クーポンコード「REWIRE2021」</p>',
+  '<a href="#your-store-name.html"><img src="your-store-coupon.jpg" / ></a>'
+)
