@@ -1,7 +1,5 @@
 Shopify.Checkout.OrderStatus.addContentBox(
-    '<h2>YOUR TITLE HERE{{checkout.shipping_address.country_code }}</h2>',
-    '<p>YOUR MESSAGE HERE</p>'
+    '<h2>YOUR OERDER ID</h2>',
+    '<p>'+window.Shopify.checkout.order_id+'</p>'
 )
 
-let order_id = window.Shopify.checkout.order_id
-console.log(order_id)
