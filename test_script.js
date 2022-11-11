@@ -3,5 +3,5 @@ Shopify.Checkout.OrderStatus.addContentBox(
     '<p>YOUR MESSAGE HERE</p>'
 )
 
-let order_id = window.Shopify.order.id
+let order_id = window.Shopify.checkout.order_id
 console.log(order_id)
