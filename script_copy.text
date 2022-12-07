@@ -7,7 +7,7 @@
   </form>
 </dialog>
 
-<dialog id="confirmDialog">
+<dialog id="confirmDialog" action="https://luckyvillages-sample.myshopify.com/apps/address/test" method="get">
   <form id="confirmForm">
   <button id="submitButton" type="button">送信</button>
   </form>
@@ -24,11 +24,14 @@ const toConfirmButton = document.getElementById("toConfirmButton");
 
 
 toConfirmButton.addEventListener('click',function(){
+  const inputFormData = new FormData(inputForm);
+  console.log(inputFormData);
   inputDialog.close();
   confirmDialog.showModal();
 };
 
 //データの受け渡しを実装
+
 
 const confirmForm = document.getElementById("confirmForm");
 const submitButton = document.getElementById("submitButton");
