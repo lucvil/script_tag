@@ -11,8 +11,8 @@ inputDialog.showModal();
 
 
 var confirmDialog = document.getElementById("confirmDialog");
-const inputForm = document.getElementById("inputForm");
-const toConfirmButton = document.getElementById("toConfirmButton");
+var inputForm = document.getElementById("inputForm");
+var toConfirmButton = document.getElementById("toConfirmButton");
 
 //ここまでオッケ
 
