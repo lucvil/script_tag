@@ -13,24 +13,26 @@
 		<script src="sample.js"></script>
 	</head>
 
-	<body>
-		<!----- ヘッダー ----->
-		<header>ヘッダー</header>
-		<nav>ナビ</nav>
-		<!----- ヘッダー END ----->
-		
-		<!----- メインコンテンツ ----->
-		<article>
-			<h1>タイトル</h1>
-			<section>
-				<h2>タイトル</h2>
-				<p>コンテンツの内容</p>
-			</section>
-		</article>
-		<!----- メインコンテンツ END ----->
-		
-		<!----- フッター ----->
-		<footer>フッター</footer>
-		<!----- フッター END ----->
+	<body>		
+		<dialog open id="exDialog">
+			<h4>ダイアログ</h4>
+			<form method="dialog">
+				<p>ボタンを押すとダイアログが閉じます</p>
+				<p><button type="submit">閉じる</button></p>
+			</form>
+		</dialog>
+		<script>
+			var openButton = document.getElementById('openButton');
+var exDialog = document.getElementById('exDialog');
+
+			openButton.addEventListener('click', function() {
+
+    				exDialog.showModal();
+
+    				// showModal() = モーダルダイアログ（周囲の領域は操作不能）
+    				// show() = モードレスダイアログ（周囲の領域も操作可能）
+
+			});
+		</script>
 	</body>
 </html>
