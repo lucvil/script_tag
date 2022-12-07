@@ -29,19 +29,19 @@ toConfirmButton.addEventListener('click',function(){
 var confirmForm = document.getElementById("confirmForm");
 var submitButton = document.getElementById("submitButton");
 
-submitButton.addEventListener('click', function(){
-  const confirmFormData = new FormData(confirmForm);
-  const confirmAction = confirmForm.getAttribute("action");
-  const options = {
-    method: 'GET',
-    body: confirmFormData,
-  }
-  fetch(action, options).then((e) => {
-    if(e.status === 200) {
-      alert("保存しました。");
-      return;
-    }else{
-      alert("保存できませんでした。");
-      return;
-    }
-});
+// submitButton.addEventListener('click', function(){
+//   const confirmFormData = new FormData(confirmForm);
+//   const confirmAction = confirmForm.getAttribute("action");
+//   const options = {
+//     method: 'GET',
+//     body: confirmFormData,
+//   }
+//   fetch(action, options).then((e) => {
+//     if(e.status === 200) {
+//       alert("保存しました。");
+//       return;
+//     }else{
+//       alert("保存できませんでした。");
+//       return;
+//     }
+// });
