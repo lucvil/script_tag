@@ -26,7 +26,7 @@ toConfirmButton.addEventListener('click',function(){
 
 //ここまでオッケ
 
-const confirmForm = document.getElementById("confirmForm");
+var confirmForm = document.getElementById("confirmForm");
 var submitButton = document.getElementById("submitButton");
 
 submitButton.addEventListener('click', function(){
