@@ -37,7 +37,7 @@ submitButton.addEventListener('click', function(){
     method: 'GET',
     body: confirmFormData,
   };
-  fetch(action, options).then((e) => {
+  fetch(confirmAction, options).then((e) => {
     if(e.status === 200) {
       alert("保存しました。");
       return;
