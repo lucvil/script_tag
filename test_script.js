@@ -35,7 +35,7 @@ submitButton.addEventListener('click', function(){
   const options = {
     method: 'GET',
     body: confirmFormData,
-  }
+  };
   fetch(action, options).then((e) => {
     if(e.status === 200) {
       alert("保存しました。");
@@ -43,5 +43,6 @@ submitButton.addEventListener('click', function(){
     }else{
       alert("保存できませんでした。");
       return;
-    })
+		}
+	});
 });
