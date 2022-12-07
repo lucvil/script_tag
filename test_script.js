@@ -17,11 +17,11 @@ var toConfirmButton = document.getElementById("toConfirmButton");
 //ここまでオッケ
 
 toConfirmButton.addEventListener('click',function(){
-  const inputFormData = new FormData(inputForm);
-  console.log(inputFormData);
-  inputDialog.close();
-  confirmDialog.showModal();
-};
+	const inputFormData = new FormData(inputForm);
+	console.log(inputFormData);
+	inputDialog.close();
+	confirmDialog.showModal();
+});
 
 
 
