@@ -19,6 +19,7 @@ var toConfirmButton = document.getElementById("toConfirmButton");
 toConfirmButton.addEventListener('click',function(){
 	const inputFormData = new FormData(inputForm);
 	console.log(inputFormData);
+	console.log("A");
 	inputDialog.close();
 	confirmDialog.showModal();
 });
@@ -43,6 +44,6 @@ submitButton.addEventListener('click', function(){
     }else{
       alert("保存できませんでした。");
       return;
-		}
-	});
+    }
+  });
 });
