@@ -1,5 +1,15 @@
 Shopify.Checkout.OrderStatus.addContentBox(
-    '<h2>YOUR TITLE HERE</h2>',
-    '<p>YOUR MESSAGE HERE'+window.Shopify.checkout.order_id+'</p>',
-    '<form action="https://luckyvillages-sample.myshopify.com/apps/address_kun/test" method="GET"><input type="text" name="name"><input type="submit" value="送信"></form>'
+    '<p><button type="button" id="openButton">ダイアログを表示</button></p><dialog id="exDialog"><h4>ダイアログ</h4><form method="dialog"><p>ボタンを押すとダイアログが閉じます</p><p><button type="submit">閉じる</button></p></form></dialog>'
 )
+
+var openButton = document.getElementById('openButton');
+var exDialog = document.getElementById('exDialog');
+
+openButton.addEventListener('click', function() {
+
+    exDialog.showModal();
+
+    // showModal() = モーダルダイアログ（周囲の領域は操作不能）
+    // show() = モードレスダイアログ（周囲の領域も操作可能）
+
+});
