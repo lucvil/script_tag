@@ -18,7 +18,7 @@ var toConfirmButton = document.getElementById("toConfirmButton");
 
 toConfirmButton.addEventListener('click',function(){
 	const inputFormData = new FormData(inputForm);
-	console.log(inputFormData);
+	console.log(inputFormData.get('city'));
 	console.log("A");
 	inputDialog.close();
 	confirmDialog.showModal();
