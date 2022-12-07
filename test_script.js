@@ -1,5 +1,5 @@
 Shopify.Checkout.OrderStatus.addContentBox(
-		'<dialog id="exDialog"><form><p>アイウエオ</p></form></dialog>'
+		'<dialog id="exDialog"><form><input name="city" required type="text" aria-required="true" autocomplete="shipping address-level2" placeholder="市区町村"></form></dialog>'
 )
 
 
