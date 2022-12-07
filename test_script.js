@@ -1,8 +1,41 @@
 Shopify.Checkout.OrderStatus.addContentBox(
-		'<dialog id="exDialog"><form><input name="city" required type="text" aria-required="true" autocomplete="shipping address-level2" placeholder="市区町村"></form></dialog>'
-)
+	'<dialog id="inputDialog"><form id="inputForm"><input name="city" placeholder="市区町村" required="" type="text" aria-required="true" autocomplete="shipping address-level2"><input name="address1" placeholder="住所" required="" type="text" aria-required="true" autocomplete="shipping address-line1"><input name="address2" placeholder="建物名、部屋番号など (任意)" type="text" aria-required="false" autocomplete="shipping address-line2"><button id="toConfirmButton" type="button">確認</button></form></dialog>',
+	'<dialog id="confirmDialog"><form id="confirmForm"><button id="submitButton" type="button">送信</button></form></dialog>'
+);		
+
+var inputDialog = document.getElementById('inputDialog');
+
+inputDialog.showModal();
+
+var confirmDialog = document.getElementById("confirmDialog");
+const inputForm = document.getElementById("inputForm");
+const toConfirmButton = document.getElementById("toConfirmButton");
 
 
-var exDialog = document.getElementById('exDialog');
-exDialog.showModal();
 
+toConfirmButton.addEventListener('click',function(){
+  inputDialog.close();
+  confirmDialog.showModal();
+};
+
+//データの受け渡しを実装
+
+const confirmForm = document.getElementById("confirmForm");
+const submitButton = document.getElementById("submitButton");
+
+submitButton.addEventListener('click', function(){
+  const confirmFormData = new FormData(confirmForm);
+  const confirmAction = confirmForm.getAttribute("action");
+  const options = {
+    method: 'GET',
+    body: confirmFormData,
+  }
+  fetch(action, options).then((e) => {
+    if(e.status === 200) {
+      alert("保存しました。");
+      return;
+    }else{
+      alert("保存できませんでした。");
+      return;
+    }
+});
