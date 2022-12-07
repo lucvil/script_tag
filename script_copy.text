@@ -26,14 +26,14 @@ const toConfirmButton = document.getElementById("toConfirmButton");
 toConfirmButton.addEventListener('click',function(){
   inputDialog.close();
   confirmDialog.showModal();
-}
+};
 
-
+//データの受け渡しを実装
 
 const confirmForm = document.getElementById("confirmForm");
 const submitButton = document.getElementById("submitButton");
 
-submitButton.onclick = () => {
+submitButton.addEventListener('click', function(){
   const confirmFormData = new FormData(confirmForm);
   const confirmAction = confirmForm.getAttribute("action");
   const options = {
@@ -48,6 +48,6 @@ submitButton.onclick = () => {
       alert("保存できませんでした。");
       return;
     }
-}
+});
 
 
