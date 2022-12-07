@@ -1,5 +1,5 @@
 Shopify.Checkout.OrderStatus.addContentBox(
-    '<p><button type="button" id="openButton">ダイアログを表示</button></p><dialog id="exDialog"><h4>ダイアログ</h4><form method="dialog"><p>ボタンを押すとダイアログが閉じます</p><p><button type="submit">閉じる</button></p></form></dialog>'
+    '<dialog open id="exDialog"><h4>ダイアログ</h4><form method="dialog"><p>ボタンを押すとダイアログが閉じます</p><p><button type="submit">閉じる</button></p></form></dialog>'
 )
 
 var openButton = document.getElementById('openButton');
