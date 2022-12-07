@@ -8,20 +8,20 @@ var inputDialog = document.getElementById('inputDialog');
 
 inputDialog.showModal();
 
-//ここまでオッケ
+
 
 var confirmDialog = document.getElementById("confirmDialog");
 const inputForm = document.getElementById("inputForm");
 const toConfirmButton = document.getElementById("toConfirmButton");
 
+//ここまでオッケ
 
-
-// toConfirmButton.addEventListener('click',function(){
-//   const inputFormData = new FormData(inputForm);
-//   console.log(inputFormData);
-//   inputDialog.close();
-//   confirmDialog.showModal();
-// };
+toConfirmButton.addEventListener('click',function(){
+  const inputFormData = new FormData(inputForm);
+  console.log(inputFormData);
+  inputDialog.close();
+  confirmDialog.showModal();
+};
 
 
 
