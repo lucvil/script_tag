@@ -8,24 +8,26 @@ var inputDialog = document.getElementById('inputDialog');
 
 inputDialog.showModal();
 
-// var confirmDialog = document.getElementById("confirmDialog");
-// const inputForm = document.getElementById("inputForm");
-// const toConfirmButton = document.getElementById("toConfirmButton");
+//ここまでオッケ
+
+var confirmDialog = document.getElementById("confirmDialog");
+const inputForm = document.getElementById("inputForm");
+const toConfirmButton = document.getElementById("toConfirmButton");
 
 
 
-// toConfirmButton.addEventListener('click',function(){
-//   const inputFormData = new FormData(inputForm);
-//   console.log(inputFormData);
-//   inputDialog.close();
-//   confirmDialog.showModal();
-// };
+toConfirmButton.addEventListener('click',function(){
+  const inputFormData = new FormData(inputForm);
+  console.log(inputFormData);
+  inputDialog.close();
+  confirmDialog.showModal();
+};
 
 
 
 
-// const confirmForm = document.getElementById("confirmForm");
-// const submitButton = document.getElementById("submitButton");
+const confirmForm = document.getElementById("confirmForm");
+const submitButton = document.getElementById("submitButton");
 
 // submitButton.addEventListener('click', function(){
 //   const confirmFormData = new FormData(confirmForm);
