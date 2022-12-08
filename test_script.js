@@ -1,6 +1,6 @@
 Shopify.Checkout.OrderStatus.addContentBox(
 	'<dialog id="inputDialog"><form id="inputForm"><input name="city" placeholder="市区町村" required="" type="text" aria-required="true" autocomplete="shipping address-level2"><input name="address1" placeholder="住所" required="" type="text" aria-required="true" autocomplete="shipping address-line1"><input name="address2" placeholder="建物名、部屋番号など (任意)" type="text" aria-required="false" autocomplete="shipping address-line2"><button id="toConfirmButton" type="button">確認</button></form></dialog>',
-	'<dialog id="confirmDialog"><form id="confirmForm" action="https://luckyvillages-sample.myshopify.com/apps/address/test" method="get"><button id="submitButton" type="submit">送信</button></form></dialog>'
+	'<dialog id="confirmDialog"><form id="confirmForm" action="https://luckyvillages-sample.myshopify.com/apps/address/test" method="get"><button id="submitButton" type="button">送信</button></form></dialog>'
 );		
 
 
@@ -15,11 +15,10 @@ var inputForm = document.getElementById("inputForm");
 var toConfirmButton = document.getElementById("toConfirmButton");
 
 
-
+var inputFormData;
 toConfirmButton.addEventListener('click',function(){
-	const inputFormData = new FormData(inputForm);
+	inputFormData = new FormData(inputForm);
 	console.log(inputFormData.get('city'));
-	console.log("A");
 	inputDialog.close();
 	confirmDialog.showModal();
 });
@@ -30,7 +29,8 @@ toConfirmButton.addEventListener('click',function(){
 var confirmForm = document.getElementById("confirmForm");
 var submitButton = document.getElementById("submitButton");
 
-confirmForm.addEventListener('submit', function(){
-	confirmDialog.close();
-	return false;
+submitButton.addEventListener('click', function(){
+	var sendRequest = new XMLHttpRequest();
+	sendRequest.open('GET','https://luckyvillages-sample.myshopify.com/apps/address/test');
+	sendRequest.send(inputFormData);
 });
