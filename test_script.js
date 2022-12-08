@@ -41,5 +41,6 @@ submitButton.addEventListener('click', function(){
 	});
 	
 	sendRequest.open('GET','https://luckyvillages-sample.myshopify.com/apps/address/test');
+	console.log(inputFormData.get('city'));
 	sendRequest.send(inputFormData);
 });
