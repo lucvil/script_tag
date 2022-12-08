@@ -31,6 +31,15 @@ var submitButton = document.getElementById("submitButton");
 
 submitButton.addEventListener('click', function(){
 	var sendRequest = new XMLHttpRequest();
+	
+	sendRequest.addEventListener('load', (event) => {
+		alert("complete");
+	});
+	
+	sendRequest.addEventListener('error', (event) => {
+		alert("error");
+	});
+	
 	sendRequest.open('GET','https://luckyvillages-sample.myshopify.com/apps/address/test');
 	sendRequest.send(inputFormData);
 });
