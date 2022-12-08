@@ -1,5 +1,5 @@
 // 日本語が入っているかを確認
-function includeJa(text) {
+function notIncludeJa(text) {
 	try {
 	    let gmi = 'gmi';
 	    let regeIncludeHiragana = '^(?=.*[\u3041-\u3096]).*$';
@@ -9,15 +9,15 @@ function includeJa(text) {
 	    let regeKatakana = new RegExp(regeIncludeKatakana, gmi);
 	    let regeKanji = new RegExp(regeIncludeKanji, gmi);
 
-	    let includeJa = false;
+	    let notIncludeJa = true;
 	    if (regeHiragana.test(text))
-		includeJa = true;
+		notIncludeJa = false;
 	    if (regeKatakana.test(text))
-		includeJa = true;
+		notIncludeJa = false;
 	    if (regeKanji.test(text))
-		includeJa = true;
+		notIncludeJa = false;
 
-	    return includeJa;
+	    return notIncludeJa;
 	} catch (error) {
 	    alert(error);
 	}
