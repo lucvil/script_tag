@@ -34,6 +34,7 @@ submitButton.addEventListener('click', function(){
 	
 	sendRequest.addEventListener('load', (event) => {
 		alert("complete");
+		confirmDialog.close();
 	});
 	
 	sendRequest.addEventListener('error', (event) => {
