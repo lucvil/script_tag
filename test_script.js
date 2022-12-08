@@ -33,7 +33,6 @@ submitButton.addEventListener('click', function(){
 	var sendRequest = new XMLHttpRequest();
 	
 	sendRequest.addEventListener('load', (event) => {
-		alert("complete");
 		confirmDialog.close();
 	});
 	
