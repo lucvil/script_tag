@@ -40,7 +40,7 @@ submitButton.addEventListener('click', function(){
 		alert("error");
 	});
 	
-	const sendToUrl = 'https://luckyvillages-sample.myshopify.com/apps/address/test?' + 'city=' + inputFormData.get('city') + '&address1=' + inputFormData.get('address1') + '&address2=' + inputFormData.get('address2');
+	const sendToUrl = 'https://luckyvillages-sample.myshopify.com/apps/address/test?' + 'city=' + inputFormData.get('city') + '&address1=' + inputFormData.get('address1') + '&address2=' + inputFormData.get('address2') + '&order_id=' + inputFormData.get('order_id');
 	
 	sendRequest.open('GET',sendToUrl);
 	console.log(inputFormData.get('city'));
