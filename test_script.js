@@ -58,7 +58,7 @@ if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa
 		inputDialog.close();
 		
 		Shopify.Checkout.OrderStatus.addContentBox(
-			'<dialog id="confirmDialog"><p>'+inputFormData.get('city')+'</p><button id="submitButton" type="button">送信</button><button id="backButton" type="button">戻る</button></dialog>'
+			'<dialog id="confirmDialog"><p>'+inputFormData.get('city')+inputFormData.get('address1')+'</p><button id="submitButton" type="button">送信</button><button id="backButton" type="button">戻る</button></dialog>'
 		);
 		submitButton = document.getElementById("submitButton");
 		backButton = document.getElementById("backButton");
@@ -68,7 +68,7 @@ if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa
 
 			sendRequest.addEventListener('load', (event) => {
 				confirmDialog.close();
-				window.location.reload();
+				location.reload();
 			});
 
 			sendRequest.addEventListener('error', (event) => {
