@@ -31,6 +31,7 @@ var sendSearchRequest = new XMLHttpRequest();
 var addressInDatabase;
 sendSearchRequest.addEventListener('load', (event) => {
 	addressInDatabase = event.currentTarget.responseText;
+	console.log(addressInDatabase);
 });
 
 sendSearchRequest.addEventListener('error', (event) => {
@@ -41,6 +42,7 @@ const sendToSearchUrl = 'https://luckyvillages-sample.myshopify.com/apps/address
 
 sendSearchRequest.open('GET',sendToSearchUrl);
 sendSearchRequest.send();
+
 
 
 if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa(addressInDatabase)) {
