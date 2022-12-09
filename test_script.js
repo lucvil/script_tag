@@ -31,7 +31,6 @@ var sendSearchRequest = new XMLHttpRequest();
 var addressInDatabase;
 sendSearchRequest.addEventListener('load', (event) => {
 	addressInDatabase = event.currentTarget.responseText;
-	console.log(addressInDatabase);
 });
 
 sendSearchRequest.addEventListener('error', (event) => {
@@ -81,9 +80,7 @@ if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa
 			var sendChangeRequest = new XMLHttpRequest();
 
 			sendChangeRequest.addEventListener('load', (event) => {
-				console.log(event);
 				confirmDialog.close();
-				//ページをリロードしてもいいものか？
 				location.reload();
 			});
 
