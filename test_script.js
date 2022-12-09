@@ -41,7 +41,7 @@ function notIncludeJa(text) {
 	var cancelButton = document.getElementById("cancelButton");
 	cancelButton.addEventListener('click', function(){
 		inputDialog.close();
-	};
+	});
 				      
 	inputDialog.showModal();
 
