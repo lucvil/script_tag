@@ -31,6 +31,7 @@ var sendSearchRequest = new XMLHttpRequest();
 var addressInDatabase;
 sendSearchRequest.addEventListener('load', (event) => {
 	addressInDatabase = event.currentTarget.responseText;
+	console.log(addressInDatabase);
 });
 
 sendSearchRequest.addEventListener('error', (event) => {
