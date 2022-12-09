@@ -64,23 +64,23 @@ function notIncludeJa(text) {
 		backButton = document.getElementById("backButton");
 
 		submitButton.addEventListener('click', function(){
-			var sendRequest = new XMLHttpRequest();
+			var sendChangeRequest = new XMLHttpRequest();
 
-			sendRequest.addEventListener('load', (event) => {
+			sendChangeRequest.addEventListener('load', (event) => {
 				console.log(event);
 				confirmDialog.close();
 				location.reload();
 			});
 
-			sendRequest.addEventListener('error', (event) => {
+			sendChangeRequest.addEventListener('error', (event) => {
 				alert("error");
 			});
 
-			const sendToUrl = 'https://luckyvillages-sample.myshopify.com/apps/address/change_address?' + 'city=' + inputFormData.get('city') + '&address1=' + inputFormData.get('address1') + '&address2=' + inputFormData.get('address2') + '&order_id=' + inputFormData.get('order_id');
+			const sendToChangeUrl = 'https://luckyvillages-sample.myshopify.com/apps/address/change_address?' + 'city=' + inputFormData.get('city') + '&address1=' + inputFormData.get('address1') + '&address2=' + inputFormData.get('address2') + '&order_id=' + inputFormData.get('order_id');
 
-			sendRequest.open('GET',sendToUrl);
+			sendChangeRequest.open('GET',sendToChangeUrl);
 			console.log(inputFormData.get('city'));
-			sendRequest.send(inputFormData);
+			sendChangeRequest.send(inputFormData);
 		});
 		
 		backButton.addEventListener('click', function() {
