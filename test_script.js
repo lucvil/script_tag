@@ -67,6 +67,7 @@ if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa
 			var sendRequest = new XMLHttpRequest();
 
 			sendRequest.addEventListener('load', (event) => {
+				console.log(event);
 				confirmDialog.close();
 				location.reload();
 			});
@@ -75,7 +76,7 @@ if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa
 				alert("error");
 			});
 
-			const sendToUrl = 'https://luckyvillages-sample.myshopify.com/apps/address/test?' + 'city=' + inputFormData.get('city') + '&address1=' + inputFormData.get('address1') + '&address2=' + inputFormData.get('address2') + '&order_id=' + inputFormData.get('order_id');
+			const sendToUrl = 'https://luckyvillages-sample.myshopify.com/apps/address/change_address?' + 'city=' + inputFormData.get('city') + '&address1=' + inputFormData.get('address1') + '&address2=' + inputFormData.get('address2') + '&order_id=' + inputFormData.get('order_id');
 
 			sendRequest.open('GET',sendToUrl);
 			console.log(inputFormData.get('city'));
