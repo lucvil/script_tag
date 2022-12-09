@@ -28,13 +28,14 @@ function notIncludeJa(text) {
 
 
 var sendSearchRequest = new XMLHttpRequest();
-var addressInDatabase;
+var addressInDatabase = "";
 sendSearchRequest.addEventListener('load', (event) => {
 	addressInDatabase = event.currentTarget.responseText;
 	console.log(addressInDatabase);
 });
 
 sendSearchRequest.addEventListener('error', (event) => {
+	addressInDatabase = "ダイアログは表示しない";
 	alert("error");
 });
 
@@ -43,7 +44,9 @@ const sendToSearchUrl = 'https://luckyvillages-sample.myshopify.com/apps/address
 sendSearchRequest.open('GET',sendToSearchUrl);
 sendSearchRequest.send();
 
-
+while(addressInDatabase == ""){
+	pass;
+}
 
 if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa(addressInDatabase)) {
 	Shopify.Checkout.OrderStatus.addContentBox(
