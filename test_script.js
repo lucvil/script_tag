@@ -44,7 +44,7 @@ sendSearchRequest.open('GET',sendToSearchUrl);
 sendSearchRequest.send();
 
 
-// if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa(addressInDatabase)) {
+if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa(addressInDatabase)) {
 	Shopify.Checkout.OrderStatus.addContentBox(
 		'<dialog id="inputDialog"><form id="inputForm"><input type="hidden" name="order_id" value=' + window.Shopify.checkout.order_id + '><input name="city" placeholder="市区町村(必須)" required="" type="text" aria-required="true" autocomplete="shipping address-level2"><input name="address1" placeholder="住所(必須)" required="" type="text" aria-required="true" autocomplete="shipping address-line1"><input name="address2" placeholder="建物名、部屋番号など (任意)" type="text" aria-required="false" autocomplete="shipping address-line2"></form><button id="toConfirmButton" type="button">確認</button><button id="cancelButton" type="button">やめる</button></dialog>',
 	);		
@@ -83,7 +83,8 @@ sendSearchRequest.send();
 			sendChangeRequest.addEventListener('load', (event) => {
 				console.log(event);
 				confirmDialog.close();
-// 				location.reload();
+				//ページをリロードしてもいいものか？
+				location.reload();
 			});
 
 			sendChangeRequest.addEventListener('error', (event) => {
@@ -106,4 +107,4 @@ sendSearchRequest.send();
 		confirmDialog.showModal();
 	});
 
-//}
+}
