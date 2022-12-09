@@ -78,21 +78,4 @@ function notIncludeJa(text) {
 		confirmDialog.showModal();
 	});
 
-// 	submitButton.addEventListener('click', function(){
-// 		var sendRequest = new XMLHttpRequest();
-
-// 		sendRequest.addEventListener('load', (event) => {
-// 			confirmDialog.close();
-// 		});
-
-// 		sendRequest.addEventListener('error', (event) => {
-// 			alert("error");
-// 		});
-
-// 		const sendToUrl = 'https://luckyvillages-sample.myshopify.com/apps/address/test?' + 'city=' + inputFormData.get('city') + '&address1=' + inputFormData.get('address1') + '&address2=' + inputFormData.get('address2') + '&order_id=' + inputFormData.get('order_id');
-
-// 		sendRequest.open('GET',sendToUrl);
-// 		console.log(inputFormData.get('city'));
-// 		sendRequest.send(inputFormData);
-// 	});
 // }
