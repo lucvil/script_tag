@@ -48,7 +48,7 @@ function notIncludeJa(text) {
 	var inputFormData;
 	var confirmDialog;
 	var submitButton;
-
+	var backButton;
 	
 	toConfirmButton.addEventListener('click',function(){
 		inputFormData = new FormData(inputForm);
@@ -56,10 +56,10 @@ function notIncludeJa(text) {
 		inputDialog.close();
 		
 		Shopify.Checkout.OrderStatus.addContentBox(
-			'<dialog id="confirmDialog"><p>'+inputFormData.get('city')+'</p><button id="submitButton" type="button">送信</button></dialog>'
+			'<dialog id="confirmDialog"><p>'+inputFormData.get('city')+'</p><button id="submitButton" type="button">送信</button><button id="backButton" type="button">戻る</button></dialog>'
 		);
 		submitButton = document.getElementById("submitButton");
-		
+		backButton = document.getElementById("backButton");
 
 		submitButton.addEventListener('click', function(){
 			var sendRequest = new XMLHttpRequest();
@@ -77,6 +77,12 @@ function notIncludeJa(text) {
 			sendRequest.open('GET',sendToUrl);
 			console.log(inputFormData.get('city'));
 			sendRequest.send(inputFormData);
+		});
+		
+		backButton.addEventListener('click', function() {
+			confirmDialog.close();
+			inputDialog.showModal();
+		
 		});
 		
 		confirmDialog = document.getElementById("confirmDialog");
