@@ -69,7 +69,7 @@ function notIncludeJa(text) {
 			sendChangeRequest.addEventListener('load', (event) => {
 				console.log(event);
 				confirmDialog.close();
-				location.reload();
+// 				location.reload();
 			});
 
 			sendChangeRequest.addEventListener('error', (event) => {
