@@ -50,7 +50,7 @@ function notIncludeJa(text) {
 		Shopify.Checkout.OrderStatus.addContentBox(
 			'<dialog id="confirmDialog"><p>'+inputFormData.get('city')+'</p><button id="submitButton" type="button">送信</button></dialog>'
 		);
-		confirmDialog =  = document.getElementById("confirmDialog");
+		confirmDialog = document.getElementById("confirmDialog");
 		confirmDialog.showModal();
 	});
 
