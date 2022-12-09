@@ -10,12 +10,18 @@ function notIncludeJa(text) {
 	    let regeKanji = new RegExp(regeIncludeKanji, gmi);
 
 	    let notIncludeJa = true;
-	    if (regeHiragana.test(text))
+	    if (regeHiragana.test(text)){
 		notIncludeJa = false;
-	    if (regeKatakana.test(text))
+		console.log("hiragana");
+	    }
+	    if (regeKatakana.test(text)){
 		notIncludeJa = false;
-	    if (regeKanji.test(text))
+		console.log("katakana");
+	    }
+	    if (regeKanji.test(text)){
 		notIncludeJa = false;
+		console.log("kanji");
+	    }
 
 	    return notIncludeJa;
 	} catch (error) {
