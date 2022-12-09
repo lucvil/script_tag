@@ -68,6 +68,7 @@ if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa
 
 			sendRequest.addEventListener('load', (event) => {
 				confirmDialog.close();
+				window.location.reload();
 			});
 
 			sendRequest.addEventListener('error', (event) => {
