@@ -49,29 +49,50 @@ function notIncludeJa(text) {
 		inputFormData = new FormData(inputForm);
 		console.log(inputFormData.get('city'));
 		inputDialog.close();
+		
 		Shopify.Checkout.OrderStatus.addContentBox(
 			'<dialog id="confirmDialog"><p>'+inputFormData.get('city')+'</p><button id="submitButton" type="button">送信</button></dialog>'
 		);
 		submitButton = document.getElementById("submitButton");
+		
+
+		submitButton.addEventListener('click', function(){
+			var sendRequest = new XMLHttpRequest();
+
+			sendRequest.addEventListener('load', (event) => {
+				confirmDialog.close();
+			});
+
+			sendRequest.addEventListener('error', (event) => {
+				alert("error");
+			});
+
+			const sendToUrl = 'https://luckyvillages-sample.myshopify.com/apps/address/test?' + 'city=' + inputFormData.get('city') + '&address1=' + inputFormData.get('address1') + '&address2=' + inputFormData.get('address2') + '&order_id=' + inputFormData.get('order_id');
+
+			sendRequest.open('GET',sendToUrl);
+			console.log(inputFormData.get('city'));
+			sendRequest.send(inputFormData);
+		});
+		
 		confirmDialog = document.getElementById("confirmDialog");
 		confirmDialog.showModal();
 	});
 
-	submitButton.addEventListener('click', function(){
-		var sendRequest = new XMLHttpRequest();
+// 	submitButton.addEventListener('click', function(){
+// 		var sendRequest = new XMLHttpRequest();
 
-		sendRequest.addEventListener('load', (event) => {
-			confirmDialog.close();
-		});
+// 		sendRequest.addEventListener('load', (event) => {
+// 			confirmDialog.close();
+// 		});
 
-		sendRequest.addEventListener('error', (event) => {
-			alert("error");
-		});
+// 		sendRequest.addEventListener('error', (event) => {
+// 			alert("error");
+// 		});
 
-		const sendToUrl = 'https://luckyvillages-sample.myshopify.com/apps/address/test?' + 'city=' + inputFormData.get('city') + '&address1=' + inputFormData.get('address1') + '&address2=' + inputFormData.get('address2') + '&order_id=' + inputFormData.get('order_id');
+// 		const sendToUrl = 'https://luckyvillages-sample.myshopify.com/apps/address/test?' + 'city=' + inputFormData.get('city') + '&address1=' + inputFormData.get('address1') + '&address2=' + inputFormData.get('address2') + '&order_id=' + inputFormData.get('order_id');
 
-		sendRequest.open('GET',sendToUrl);
-		console.log(inputFormData.get('city'));
-		sendRequest.send(inputFormData);
-	});
+// 		sendRequest.open('GET',sendToUrl);
+// 		console.log(inputFormData.get('city'));
+// 		sendRequest.send(inputFormData);
+// 	});
 // }
