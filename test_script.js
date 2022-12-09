@@ -30,7 +30,7 @@ function notIncludeJa(text) {
 
 
 
-if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa(window.Shopify.checkout.shipping_address.city + window.Shopify.checkout.shipping_address.address1)) {
+// if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa(window.Shopify.checkout.shipping_address.city + window.Shopify.checkout.shipping_address.address1)) {
 	Shopify.Checkout.OrderStatus.addContentBox(
 		'<dialog id="inputDialog"><form id="inputForm"><input type="hidden" name="order_id" value=' + window.Shopify.checkout.order_id + '><input name="city" placeholder="市区町村(必須)" required="" type="text" aria-required="true" autocomplete="shipping address-level2"><input name="address1" placeholder="住所(必須)" required="" type="text" aria-required="true" autocomplete="shipping address-line1"><input name="address2" placeholder="建物名、部屋番号など (任意)" type="text" aria-required="false" autocomplete="shipping address-line2"></form><button id="toConfirmButton" type="button">確認</button><button id="cancelButton" type="button">やめる</button></dialog>',
 	);		
@@ -93,4 +93,4 @@ if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa
 		confirmDialog.showModal();
 	});
 
-}
+//}
