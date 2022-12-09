@@ -52,7 +52,9 @@ function notIncludeJa(text) {
 	
 	toConfirmButton.addEventListener('click',function(){
 		inputFormData = new FormData(inputForm);
-		console.log(inputFormData.get('city'));
+		if(inputFormData.get('city') == '' || inputFormData.get('address1') == ''){
+			return;
+		}
 		inputDialog.close();
 		
 		Shopify.Checkout.OrderStatus.addContentBox(
