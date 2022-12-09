@@ -27,6 +27,7 @@ function notIncludeJa(text) {
 }
 
 
+
 var sendSearchRequest = new XMLHttpRequest();
 var addressInDatabase = "";
 sendSearchRequest.addEventListener('load', (event) => {
@@ -43,10 +44,6 @@ const sendToSearchUrl = 'https://luckyvillages-sample.myshopify.com/apps/address
 
 sendSearchRequest.open('GET',sendToSearchUrl);
 sendSearchRequest.send();
-
-while(addressInDatabase == ""){
-	pass;
-}
 
 if(window.Shopify.checkout.billing_address.country_code  == "JP" && notIncludeJa(addressInDatabase)) {
 	Shopify.Checkout.OrderStatus.addContentBox(
