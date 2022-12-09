@@ -52,7 +52,7 @@ function notIncludeJa(text) {
 	
 	toConfirmButton.addEventListener('click',function(){
 		inputFormData = new FormData(inputForm);
-		if(inputFormData.get('city') == '' || inputFormData.get('address1') == ''){
+		if(inputFormData.get('city').trim() == '' || inputFormData.get('address1').trim() == ''){
 			return;
 		}
 		inputDialog.close();
